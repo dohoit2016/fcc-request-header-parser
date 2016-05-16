@@ -10,7 +10,14 @@ app.get("/info", function (req, res) {
 	console.log(req.ip);
 	console.log(req.headers);
 	var result = {};
-	result.ipaddress = req.headers['x-forwaded-for'] || req.connection.remoteAddress;
+	var ipAddr = req.headers["x-forwarded-for"];
+		if (ipAddr){
+			var list = ipAddr.split(",");
+			ipAddr = list[list.length-1];
+		} else {
+			ipAddr = req.connection.remoteAddress;
+		}
+	result.ipaddress = ipAddr;
 	result.language = req.headers['accept-language'].split(",")[0];
 	var r = /\(([^\(\)]+)\)/.exec(req.headers['user-agent'])[1];
 	result.software = r;

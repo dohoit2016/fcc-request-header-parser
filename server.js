@@ -10,7 +10,7 @@ app.get("/info", function (req, res) {
 	console.log(req.ip);
 	console.log(req.headers);
 	var result = {};
-	result.ipaddress = req.ip;
+	result.ipaddress = req.header('x-forwaded-for') || req.connection.remoteAddress;
 	result.language = req.headers['accept-language'].split(",")[0];
 	var r = /\(([^\(\)]+)\)/.exec(req.headers['user-agent'])[1];
 	result.software = r;

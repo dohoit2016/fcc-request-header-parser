@@ -1,0 +1,24 @@
+{
+  "name": "timestamp-microservice",
+  "version": "1.0.0",
+  "description": "FreeCodeCamp timestamp-microservice",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/projectit3910/fcc-timestamp.git"
+  },
+  "author": "ngocdon0127",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/projectit3910/fcc-timestamp/issues"
+  },
+  "homepage": "https://github.com/projectit3910/fcc-timestamp#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "url": "^0.11.0"
+  }
+}
